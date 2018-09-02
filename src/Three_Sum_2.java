@@ -38,11 +38,11 @@ public class Three_Sum_2
 		}
 		return result;
 	}
-
+	
 	public static void main(String[] args)
 	{
 		int[] nums =
-		{ -1, 0, 0, 0, 0 };
+		{ -1,0,0,0 };
 		List<List<Integer>> result = new Three_Sum_2().threeSum(nums);
 
 		for (List<Integer> list : result)
