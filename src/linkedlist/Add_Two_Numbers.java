@@ -1,3 +1,4 @@
+package linkedlist;
 
 public class Add_Two_Numbers
 {
@@ -55,10 +56,4 @@ public class Add_Two_Numbers
     		addTwoNumbers = addTwoNumbers.next;
     	}
 	}
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
 }
