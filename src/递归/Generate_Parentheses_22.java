@@ -30,19 +30,20 @@ public class Generate_Parentheses_22
     		return ;
     	}
     	
+    	if(left < n)
+    	{
+    		getParentheses(n, current + "(", left + 1, right, list);
+    	}
+    	
     	if(right < left)
     	{
     		getParentheses(n, current + ")", left, right + 1, list);
-    	}
-    	else if(left < n)
-    	{
-    		getParentheses(n, current + "(", left + 1, right, list);
     	}
     }
     
     public static void main(String[] args)
 	{
-		List<String> result = new Generate_Parentheses_22().generateParenthesis(3);
+		List<String> result = new Generate_Parentheses_22().generateParenthesis(4);
 		
 		System.out.println(result);
 	}
