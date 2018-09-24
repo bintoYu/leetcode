@@ -21,13 +21,14 @@ public class Merge_k_Sorted_Lists_23
     }
     
     public ListNode mergeKLists(ListNode[] lists,int begin,int end) {
-    	if(begin == end)
-    		return lists[begin];
-    	
-    	int mid = (begin+end)/2;
-    	ListNode left = mergeKLists(lists, begin, mid);
-    	ListNode right = mergeKLists(lists, mid+1, end);
-    	return mergeTwoListsWithRecursion(left, right);
+    	if(begin<end)
+    	{
+	    	int mid = (begin+end)/2;
+	    	ListNode left = mergeKLists(lists, begin, mid);
+	    	ListNode right = mergeKLists(lists, mid+1, end);
+	    	return mergeTwoListsWithRecursion(left, right);
+    	}
+    	return lists[begin];
     }
     
     public ListNode mergeTwoListsWithRecursion(ListNode l1, ListNode l2){
