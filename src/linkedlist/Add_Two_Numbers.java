@@ -6,7 +6,7 @@ public class Add_Two_Numbers
     	ListNode p = l1;ListNode q = l2;
     	int sum = 0;
     	ListNode result = new ListNode(0);
-    	ListNode start = result;
+    	ListNode dummy = result;
     	while(p != null || q!= null)
     	{
     		int x = (p!=null)?p.val:0;
@@ -24,7 +24,7 @@ public class Add_Two_Numbers
     	if(sum > 0)
     		result.next = new ListNode(sum);
     	
-    	return start.next;
+    	return dummy.next;
     }
     
     

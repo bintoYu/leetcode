@@ -19,7 +19,7 @@ public class Longest_Substring_03
         int max = 0;
         int length = 0;
         
-		for (int i = 0; i < s.length(); ++i)
+		for (int i = 0; i < s.length(); i++)
 		{
 			length++;
 			if (map.containsKey(s.charAt(i)))

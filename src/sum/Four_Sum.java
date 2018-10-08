@@ -11,7 +11,7 @@ public class Four_Sum
 		Arrays.sort(nums);
 		for (int i = 0; i < nums.length - 3; i++)
 		{
-			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) // ȥ��
+			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) //去重
 			{
 				int j = i + 1;
 

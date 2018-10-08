@@ -13,24 +13,25 @@ public class Three_Sum_2
 		Arrays.sort(nums);
 		for (int i = 0; i < nums.length - 2; i++)
 		{
-			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) // ȥ��
+			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) //去重
 			{
 				int j = i + 1;
 				int k = nums.length - 1;
+				int target = 0 - nums[i];
+				
 				while (j < k)
 				{
-					int num = 0 - nums[i] - nums[j] - nums[k];
-					if (num > 0)
+					if (nums[j] + nums[k] < target)
 						j++;
-					else if (num < 0)
+					else if (nums[j] + nums[k] > target)
 						k--;
 					else
 					{
 						result.add(Arrays.asList(nums[i], nums[j], nums[k]));
 						while (j < k && nums[j] == nums[j + 1])
-							j++; // ȥ��
+							j++; //去重
 						while (j < k && nums[k] == nums[k - 1])
-							k--; // ȥ��
+							k--; //去重
 						j++;
 						k--;
 					}
