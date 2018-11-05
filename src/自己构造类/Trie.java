@@ -8,7 +8,7 @@ public class Trie
 	
     /** Initialize your data structure here. */
     public Trie() {
-    	root = new TrieNode('&');
+    	root = new TrieNode();
     }
     
     /**
@@ -24,7 +24,7 @@ public class Trie
     		int num = c - 'a';
 			if(pNode.son[num] == null)
 			{
-				pNode.son[num] = new TrieNode(c);
+				pNode.son[num] = new TrieNode();
 			}
 
 			pNode = pNode.son[num];
@@ -90,12 +90,10 @@ class TrieNode
 {
 	public TrieNode[] son;
 	public boolean isWord;
-	public char var;
 	
-	public TrieNode(char var)
+	public TrieNode()
 	{
 		son = new TrieNode[26];
 		isWord = false;
-		this.var = var;
 	}
 }
