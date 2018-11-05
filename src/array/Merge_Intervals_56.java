@@ -1,7 +1,19 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+class IntervalComparator implements Comparator<Interval>
+{
+	@Override
+	public int compare(Interval o1, Interval o2)
+	{
+		return Integer.compare(o1.start, o2.start);
+	}
+	
+}
 
 public class Merge_Intervals_56
 {
@@ -10,12 +22,14 @@ public class Merge_Intervals_56
     	
     	if(intervals.size() ==0 || intervals == null)
     		return res;
+
+    	Collections.sort(intervals, new IntervalComparator());
     	
         Interval interval = intervals.get(0);
 	    for(int i = 1; i < intervals.size(); i++)
 	    {
 	    	Interval interval2 = intervals.get(i);
-	    	if(interval.start <= interval2.end && interval.end >= interval2.start )
+	    	if(interval.start <= interval2.end && interval2.start <= interval.end)
 	    	{
 	    		interval.start = Math.min(interval.start, interval2.start);
 	    		interval.end = Math.max(interval.end, interval2.end);
@@ -33,9 +47,9 @@ public class Merge_Intervals_56
     
     public static void main(String[] args)
 	{
-		Interval interval1= new Interval(1, 3);
+		Interval interval1= new Interval(8, 10);
 		Interval interval2= new Interval(2, 6);
-		Interval interval3= new Interval(8, 10);
+		Interval interval3= new Interval(1, 3);
 		Interval interval4= new Interval(15, 18);
 		List<Interval> intervals = new ArrayList<Interval>(){};
 		intervals.add(interval1);
