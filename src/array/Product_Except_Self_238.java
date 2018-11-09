@@ -13,9 +13,15 @@ public class Product_Except_Self_238
         	res[i] = res[i-1] * nums[i-1];
         }
         
-        for(int i = nums.length-2; i >= 0; i--)
+        int right = 1;
+        for(int i = nums.length-1; i >= 0; i--)
         {
-        	res[i] = res[i+1] * nums[i+1];
+        	res[i]  *= right;
+        	right *= nums[i]; 
         }
+        
+        return res;
     }
+    
+    
 }
